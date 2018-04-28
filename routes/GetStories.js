@@ -6,7 +6,7 @@ var models = require('../models/index');
 router.get('/', function (req, res, next) {
 
     models.Story.findAll({
-        attributes: ['body', 'createdAt'],
+        attributes: ['body', 'createdAt', 'style', 'userId'],
         limit: 200,
         order: [ ['createdAt', 'DESC'] ]
     }).then((stories) => {
@@ -15,6 +15,7 @@ router.get('/', function (req, res, next) {
             message: '', 
             stories: stories 
         });
+        console.log(stories)
     }).catch(err => {console.log(err)});
 });
 

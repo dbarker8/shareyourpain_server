@@ -10,6 +10,7 @@ router.post('/', function (req, res, next) {
       body: req.body.storyBody, 
       color: req.body.color,
       font: req.body.font,
+      type: req.body.type,
       userId: 1, //CHANGE THIS to req.user based thing
     }).then((story) => {
         res.send({status: 'success', message: ''});
