@@ -6,7 +6,7 @@ var models = require('../models/index');
 router.get('/', function (req, res, next) {
 
     models.Story.findAll({
-        attributes: ['body', 'createdAt', 'style', 'userId'],
+        attributes: ['body', 'createdAt', 'style', 'userId', 'type'],
         limit: 200,
         order: [ ['createdAt', 'DESC'] ]
     }).then((stories) => {
