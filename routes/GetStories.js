@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
             message: '', 
             stories: stories 
         });
-        console.log(stories)
+        // console.log(stories)
     }).catch(err => {console.log(err)});
 });
 

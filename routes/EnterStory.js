@@ -5,7 +5,6 @@ var models = require('../models/index');
 
 router.post('/', function (req, res, next) {
     
-
     models.Story.create({
       body: req.body.storyBody, 
       color: req.body.color,
