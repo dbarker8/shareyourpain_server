@@ -8,6 +8,7 @@ router.get('/', function (req, res, next) {
     models.Story.findAll({
         attributes: ['body', 'createdAt', 'style', 'userId', 'type'],
         limit: 200,
+        where: {isActive: true},
         order: [ ['createdAt', 'DESC'] ]
     }).then((stories) => {
         res.send({ 
