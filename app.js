@@ -27,7 +27,7 @@ app.use(session({
   store: new (require('connect-pg-simple')(session))(),
   secret: process.env.SESSION_SECRET, //use a real secret
   resave: false, //resave means update whenever page is reloaded even if theres no changes made to it
-  saveUninitialized: false, //false means only make sessions when user logs in, not on any page visit
+  saveUninitialized: true, //false means only make sessions when user logs in, not on any page visit
   cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 days
   //cookie: { secure: true }
 }));
@@ -45,6 +45,7 @@ app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 app.use('/enterstory', require('./routes/EnterStory'));
 app.use('/getstories', require('./routes/GetStories'));
+app.use('/acceptemail', require('./routes/AcceptEmail'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
