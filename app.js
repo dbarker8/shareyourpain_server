@@ -57,7 +57,7 @@ app.use(function(req, res, next) {
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   // res.locals.message = err.message;
-  // res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   console.error('ERROR: ' + err.message);
   console.error(err.stack.length > 600 ? err.stack.substring(0, 600) + '...' : err.stack);
